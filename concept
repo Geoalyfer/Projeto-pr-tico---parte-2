@@ -1,0 +1,26 @@
+Projeto prático - parte 2
+
+Gravando dados:
+Criar um novo arquivo chamado “Clientes.csv” para servir como banco de dados salvos.
+Criar função adicionar após a função definida no início do bloco
+def gravar_dados(nome, data_nasc, tipo): 
+    if nome and data_nasc <= date.today():
+        with open("clientes.csv", "a", encoding="utf-8") as file:
+            file.write(f"{nome},{data_nasc},{tipo}")
+
+ 
+Gerando a visualização do arquivo csv na aba “Consulta”
+
+import streamlit as st
+import pandas as pd
+
+dados = pd.read_csv("clientes.csv")
+
+st.title("Clientes cadastrados")
+st.divider()
+
+st.dataframe(dados)
+
+ 
+
+ 
